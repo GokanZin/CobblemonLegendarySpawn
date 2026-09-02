@@ -1,0 +1,17 @@
+# Controls which server dimensions can be used to choose the player that receives the nearby spawn.
+# World IDs must use namespace:path. Custom datapack/mod dimensions are supported when they are loaded by the server.
+
+# true: every loaded server dimension is allowed unless it appears in blocked-worlds.
+# false: only dimensions listed in allowed-worlds are allowed. blocked-worlds still wins.
+allow-all-worlds: true
+
+# Used when allow-all-worlds is false.
+allowed-worlds:
+  - minecraft:overworld
+
+# These dimensions are never eligible, even if allow-all-worlds is true or the world also appears above.
+blocked-worlds: []
+# Example:
+# blocked-worlds:
+#   - minecraft:the_nether
+#   - minecraft:the_end

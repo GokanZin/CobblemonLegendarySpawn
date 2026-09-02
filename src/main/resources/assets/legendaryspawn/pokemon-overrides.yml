@@ -1,0 +1,34 @@
+# Optional per-Pokemon world and biome rules.
+# Pokemon not listed here simply inherit worlds.yml and biomes.yml.
+# mode: inherit keeps the global rule and applies the lists below as extra restrictions.
+# mode: replace ignores the global allow/biome rule for that Pokemon and uses this section instead.
+# blocked lists always win.
+
+pokemon: {}
+
+# Example:
+# pokemon:
+#   cobblemon:rayquaza:
+#     worlds:
+#       mode: inherit
+#       allowed: []
+#       blocked:
+#         - minecraft:the_nether
+#     biomes:
+#       mode: inherit
+#       allowed: []
+#       blocked:
+#         - minecraft:desert
+#
+#   cobblemon:kyogre:
+#     worlds:
+#       mode: replace
+#       allowed:
+#         - minecraft:overworld
+#       blocked: []
+#     biomes:
+#       mode: replace
+#       allowed:
+#         - minecraft:ocean
+#         - minecraft:deep_ocean
+#       blocked: []

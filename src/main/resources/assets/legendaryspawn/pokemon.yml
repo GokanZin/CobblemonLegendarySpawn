@@ -1,0 +1,20 @@
+# Controls which Pokemon can enter the automatic spawn pool.
+# This file is intentionally separate from config.yml so the main config stays focused on timer/spawn behavior.
+
+# A Pokemon must have at least one of these labels.
+# With only legendary here, every implemented Pokemon carrying Cobblemon's legendary label can enter the pool.
+# You can add mythical later if you want both categories in the same pool.
+# Leave this empty only if you intentionally want to disable the label requirement.
+required-labels:
+  - legendary
+
+# Optional exact Pokemon list.
+# Leave this empty to use the dynamic Cobblemon registry pool filtered by required-labels and blacklist.yml.
+# When this list has entries, only these Pokemon can spawn. They still need to match required-labels.
+# IDs must use namespace:path.
+specific-pokemon: []
+# Example:
+# specific-pokemon:
+#   - cobblemon:rayquaza
+#   - cobblemon:kyogre
+#   - cobblemon:groudon

@@ -1,0 +1,16 @@
+# Everything in this file is removed from the automatic Pokemon pool.
+# Blacklist rules always win, including against entries from pokemon.yml.
+
+# Exact Pokemon IDs that must never be selected.
+# IDs must use namespace:path.
+pokemon: []
+# Example:
+# pokemon:
+#   - cobblemon:rayquaza
+
+# Any Pokemon carrying one of these labels is removed from the pool.
+# This is useful for excluding a whole category without listing every Pokemon manually.
+labels: []
+# Example:
+# labels:
+#   - mythical

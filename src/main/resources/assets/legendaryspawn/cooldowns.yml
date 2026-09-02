@@ -1,0 +1,20 @@
+# Cooldowns keep the same species from appearing repeatedly and can add a server-wide delay after a capture/defeat.
+# Cooldown timestamps are persisted in state.yml so restarting the server does not bypass them.
+
+species:
+  enabled: true
+  # Applied after a Pokemon is successfully spawned by LegendarySpawn.
+  default-minutes: 180
+  # Optional per-species values. IDs must use namespace:path.
+  overrides: {}
+  # Example:
+  # overrides:
+  #   cobblemon:rayquaza: 360
+  #   cobblemon:mewtwo: 360
+
+global-after-event:
+  enabled: true
+  # After capture/defeat, automatic rolls wait for this extra cooldown.
+  # Use 0 to disable one event without disabling the other.
+  captured-minutes: 30
+  defeated-minutes: 30

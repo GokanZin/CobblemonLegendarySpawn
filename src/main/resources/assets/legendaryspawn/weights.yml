@@ -1,0 +1,13 @@
+# Controls how often categories are selected after all normal pool filters are applied.
+# This does not change the 15% global roll. It only changes which Pokemon is chosen after the roll passes.
+enabled: true
+
+# Weight used when a Pokemon does not match any label listed below.
+# Every weight must be greater than zero.
+default-weight: 1.0
+
+# If a Pokemon has more than one configured label, the highest matching weight is used.
+# Example: mythical can be made rarer than legendary without hardcoding species names.
+labels:
+  legendary: 1.0
+  mythical: 0.5

@@ -1,0 +1,8 @@
+# Prevents too many LegendarySpawn Pokemon from staying active at the same time.
+active-limit:
+  enabled: true
+  max-active: 1
+
+  # false lets an administrator intentionally bypass the limit with /legendaryspawn force.
+  # Automatic rolls and /legendaryspawn roll always respect the limit.
+  apply-to-force: false

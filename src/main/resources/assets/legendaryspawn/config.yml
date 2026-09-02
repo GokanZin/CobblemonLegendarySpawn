@@ -1,0 +1,60 @@
+# Main LegendarySpawn settings.
+# The file is checked when the server starts and again on /legendaryspawn reload.
+# If a value has the wrong type, a key is misspelled, a dimension does not exist, a label is unknown,
+# the new config is rejected and the exact problem is shown in the console and to the administrator who ran reload.
+# Pokemon/world/biome/protection rules live in pokemon.yml, blacklist.yml, worlds.yml, biomes.yml and protection.yml so this file stays compact.
+
+# The timer makes one global attempt after a random interval. It is not a chance per player.
+
+# When disabled, the active countdown is frozen instead of silently expiring in the background.
+# Re-enabling the module continues from the saved remaining time.
+enabled: true
+
+# The automatic roll is only allowed when at least this many players are online.
+minimum-online-players: 1
+
+# When true, the remaining timer is frozen while the server is below the minimum player count.
+# The remaining time is also kept when the server stops, so a restart does not reset the interval.
+pause-timer-when-below-minimum-players: true
+
+# Global chance used when the timer reaches zero. 0.15 means 15%.
+spawn-chance: 0.15
+
+debug: false
+
+interval:
+  # A fresh interval is picked after every automatic attempt.
+  min-minutes: 60
+  max-minutes: 90
+
+spawn:
+  # Horizontal distance from the selected player.
+  # These defaults keep the Pokemon close to the chosen player without spawning directly on top of them.
+  # Increase max-distance if biome restrictions are enabled and your server has large biomes.
+  min-distance: 30
+  max-distance: 100
+
+  # How many random loaded positions are checked before the spawn is cancelled.
+  # The search skips unloaded chunks instead of forcing a large amount of chunk generation/loading.
+  attempts: 48
+
+  min-level: 55
+  max-level: 75
+
+  # When false, positions whose surface is water are rejected.
+  allow-water: false
+
+  # false keeps this special spawn out of Cobblemon's normal spawn cap.
+  count-towards-spawn-cap: false
+
+  # 8192 means a 1 in 8192 shiny roll. Use 0 to disable this extra shiny roll.
+  shiny-one-in-chance: 8192
+
+announcement:
+  enabled: true
+
+  # Available placeholders: {pokemon}, {level}, {x}, {y}, {z}, {player}, {dimension}, {biome}, {biome_id}
+  # Coordinates are replaced with the hidden text from messages.yml when show-coordinates is false.
+  message: '<gradient:#FFD54A:#FF9F1C>✦ LEGENDARY APPEARED ✦</gradient> &7A wild <#FFE16B>{pokemon} &7has appeared near <#63C5FF>{player} &7in <#7CFF8A>{biome}&7!'
+
+  show-coordinates: false

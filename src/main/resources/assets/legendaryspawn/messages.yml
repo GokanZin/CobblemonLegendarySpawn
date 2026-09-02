@@ -1,0 +1,43 @@
+# Messages used by LegendarySpawn.
+# Wrong keys, wrong value types and invalid placeholders are reported by GKLogger on startup and on reload.
+# Legacy colors with & still work, and you can also use hex like <#FFD700> and gradients like <gradient:#FFD700:#FF9D00>text</gradient>.
+# The {pokemon} placeholder has a server-side text hover with level, shiny, nature, ability, gender, moves, IVs and EVs.
+# The hover intentionally does not include coordinates, dimension, player location or biome location details.
+
+commands:
+  reload:
+    success: '&aLegendarySpawn configuration reloaded successfully.'
+    failed: '&cReload failed. The previous valid configuration is still active.'
+
+status:
+  header: '&6LegendarySpawn status'
+  paused: 'Paused'
+
+placeholders:
+  # Used for {x}, {y} and {z} when coordinates are hidden.
+  hidden-coordinate: 'hidden'
+
+events:
+  captured:
+    # Available placeholders: {pokemon}, {level}, {player}, {dimension}, {biome}, {biome_id}, {x}, {y}, {z}
+    message: '&a{player} captured <#FFE16B>{pokemon} &ain <#7CFF8A>{biome}&a!'
+
+  defeated:
+    # In multi-player battles, {player} contains all player names from the winning side.
+    # Available placeholders: {pokemon}, {level}, {player}, {dimension}, {biome}, {biome_id}, {x}, {y}, {z}
+    message: '&c{player} defeated <#FFE16B>{pokemon} &cin <#7CFF8A>{biome}&c!'
+
+  killed:
+    # Used when the Pokemon dies outside the normal Cobblemon battle faint event.
+    # {player} is the killer name when one can be identified. For environmental/unknown deaths it uses unknown-killer below.
+    # Available placeholders: {pokemon}, {level}, {player}, {dimension}, {biome}, {biome_id}, {x}, {y}, {z}
+    message: '&cThe legendary <#FFE16B>{pokemon} &cwas killed by &f{player}&c!'
+    unknown-killer: 'something'
+
+  protection-expired:
+    # Sent when the protection time ends while the spawned Pokemon is still alive.
+    message: '&eThe legendary <#FFE16B>{pokemon} &ein <#7CFF8A>{biome} &eis no longer protected from despawning.'
+
+  despawned:
+    # Sent when the tracked Pokemon disappears after protection already ended.
+    message: '&7The wild legendary <#FFE16B>{pokemon} &7disappeared from <#7CFF8A>{biome}&7.'

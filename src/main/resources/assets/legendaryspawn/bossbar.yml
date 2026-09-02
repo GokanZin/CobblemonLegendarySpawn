@@ -1,0 +1,17 @@
+# Temporary bossbar for Pokemon spawned by LegendarySpawn.
+# The bar follows the same duration as protection.yml and disappears when protection expires,
+# the Pokemon is captured/defeated, or the tracked entity disappears after protection.
+# The countdown is wall-clock based and keeps updating through Cobblemon battle/flee entity transitions.
+enabled: true
+
+# Available placeholders: {pokemon}, {level}, {time}, {player}
+title: '&6{pokemon} &7- &f{time}'
+
+# Vanilla bossbar colors: pink, blue, red, green, yellow, purple, white
+color: purple
+
+# Vanilla overlays: progress, notched_6, notched_10, notched_12, notched_20
+overlay: notched_10
+
+# true shows the bar to every online player. false shows it only to the player the Pokemon originally spawned near.
+show-to-all-players: true

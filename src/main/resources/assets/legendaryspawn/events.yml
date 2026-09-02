@@ -1,0 +1,9 @@
+# Enables or disables each global event announcement.
+# The actual text is kept in messages.yml so rule files stay separate from messages.
+captured: true
+defeated: true
+
+# Announces when the tracked Pokemon dies outside Cobblemon battle handling, such as damage, commands, mobs or environment.
+killed: true
+protection-expired: true
+despawned: true

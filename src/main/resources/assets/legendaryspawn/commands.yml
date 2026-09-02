@@ -1,0 +1,43 @@
+# Command names and access rules live here.
+# Invalid command names, duplicated subcommand names, wrong value types and permission levels outside 0-4
+# are reported by GKLogger during startup/reload instead of being silently accepted.
+# Permission levels, permission nodes and the no-permission message are reloaded with /legendaryspawn reload.
+# Command names and aliases are registered by Brigadier when the server starts, so changing a name or alias still needs a restart.
+# Permission strings are optional. Leave them empty to use only the configured operator level.
+# When a permission string is set, a player must pass both the operator level and the configured GKCore permission check.
+
+command:
+  name: legendaryspawn
+  aliases:
+    - lspawn
+
+  # Minecraft operator level from 0 to 4. The requested default is level 2.
+  permission-level: 2
+  permission: ''
+  no-permission-message: '&cYou do not have permission to use this command.'
+
+subcommands:
+  reload:
+    name: reload
+    permission-level: 2
+    permission: ''
+
+  status:
+    name: status
+    permission-level: 2
+    permission: ''
+
+  force:
+    name: force
+    permission-level: 2
+    permission: ''
+
+  roll:
+    name: roll
+    permission-level: 2
+    permission: ''
+
+  reschedule:
+    name: reschedule
+    permission-level: 2
+    permission: ''

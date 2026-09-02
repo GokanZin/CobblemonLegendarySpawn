@@ -1,0 +1,18 @@
+# Optional biome restriction for automatic LegendarySpawn positions.
+# When disabled, the mod only checks the normal safe-position rules from config.yml.
+# When enabled, the selected Pokemon must be placed in a biome that Cobblemon says is valid for that species.
+# The biome list is read from Cobblemon's already-loaded world spawn pool, including datapack/addon spawn files.
+# LegendarySpawn caches that information and refreshes the cache only when Cobblemon reloads its spawn pool.
+# It does not scan spawn JSON files or rebuild biome lists on every timer tick or position attempt.
+
+enabled: false
+
+# Uses CobblemonSpawnPools.WORLD_SPAWN_POOL and each loaded Pokemon spawn detail's precomputed validBiomes set.
+# Keep this true when enabled unless you intentionally want biome filtering to have no active source.
+use-cobblemon-spawn-data: true
+
+# Some Pokemon may not have a normal world-spawn entry at all.
+# allow-any: the Pokemon stays in the LegendarySpawn pool and may use any otherwise-safe biome.
+# reject: Pokemon without Cobblemon world-spawn biome data are removed from the biome-aware pool.
+# A Pokemon that has spawn entries but those entries resolve to zero valid biomes is rejected either way.
+when-no-spawn-data: allow-any

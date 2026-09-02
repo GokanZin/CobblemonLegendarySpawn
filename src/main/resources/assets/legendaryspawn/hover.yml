@@ -1,0 +1,83 @@
+# Controls the text shown when a player moves the mouse over {pokemon} in LegendarySpawn messages.
+# This hover is 100% server-side and uses normal Minecraft SHOW_TEXT.
+# No location placeholders are accepted here on purpose. If you try to use player/world/biome/coordinates,
+# LegendarySpawn rejects the reload and GKLogger tells you which line is invalid.
+#
+# Colors:
+#   &6, &e, &f, etc. still work.
+#   Hex example: <#FFD54A>Text
+#   Gradient example: <gradient:#FFD54A:#FF9F1C>Text</gradient>
+#
+# You can reorder lines, remove lines or add the same placeholder more than once.
+# An empty string creates a blank line.
+
+enabled: true
+
+# Choose exactly where the Pokemon hover is attached.
+# If one of these is false, {pokemon} is still shown normally in that message, just without hover.
+messages:
+  spawn: true
+  captured: true
+  defeated: true
+  killed: true
+  protection-expired: true
+  despawned: true
+  force-command: true
+  roll-command: true
+
+# Small text placed immediately after the Pokemon name so players know there is extra information on hover.
+# The hint itself has the same hover as the Pokemon name. Use an empty text or enabled: false to hide it.
+hint:
+  enabled: true
+  text: ' &8[<#FFD54A>Hover&8]'
+
+# These values are also editable so the hover can be translated without changing Java code.
+values:
+  shiny-yes: 'Yes'
+  shiny-no: 'No'
+  gender-male: 'Male'
+  gender-female: 'Female'
+  gender-genderless: 'Genderless'
+  gender-unknown: 'Unknown'
+  empty-move: 'None'
+
+# Available placeholders:
+# General:
+#   {pokemon} {level} {shiny} {nature} {ability} {gender}
+#
+# Moves:
+#   {move_1} {move_1_pp} {move_1_max_pp}
+#   {move_2} {move_2_pp} {move_2_max_pp}
+#   {move_3} {move_3_pp} {move_3_max_pp}
+#   {move_4} {move_4_pp} {move_4_max_pp}
+#
+# IVs:
+#   {ivs_total} {ivs_max} {ivs_percent}
+#   {iv_hp} {iv_atk} {iv_def} {iv_spa} {iv_spd} {iv_spe}
+#
+# EVs:
+#   {evs_total} {evs_max} {evs_percent}
+#   {ev_hp} {ev_atk} {ev_def} {ev_spa} {ev_spd} {ev_spe}
+#
+# The percentages are calculated by the mod. Example: 162/186 becomes 87%.
+lines:
+  - ''
+  - '<gradient:#FFD54A:#FF9F1C>✦ {pokemon}</gradient>'
+  - '&7Level: &f{level} &8| &7Shiny: &f{shiny}'
+  - '&7Nature: &f{nature} &8| &7Ability: &f{ability}'
+  - '&7Gender: &f{gender}'
+  - ''
+  - '<#FFD54A>Moves'
+  - '&f• {move_1} &8— &f{move_1_pp}/{move_1_max_pp} PP &8| &f{move_2} &8— &f{move_2_pp}/{move_2_max_pp} PP'
+  - '&f• {move_3} &8— &f{move_3_pp}/{move_3_max_pp} PP &8| &f{move_4} &8— &f{move_4_pp}/{move_4_max_pp} PP'
+  - ''
+  - '<#7CFF8A>IVs &7({ivs_total}/{ivs_max}) &f{ivs_percent}%'
+  - '&7HP: &f{iv_hp} &8| &7ATK: &f{iv_atk}'
+  - '&7DEF: &f{iv_def} &8| &7SPA: &f{iv_spa}'
+  - '&7SPD: &f{iv_spd} &8| &7SPE: &f{iv_spe}'
+  - ''
+  - '<#63C5FF>EVs &7({evs_total}/{evs_max}) &f{evs_percent}%'
+  - '&7HP: &f{ev_hp} &8| &7ATK: &f{ev_atk}'
+  - '&7DEF: &f{ev_def} &8| &7SPA: &f{ev_spa}'
+  - '&7SPD: &f{ev_spd} &8| &7SPE: &f{ev_spe}'
+  - ''

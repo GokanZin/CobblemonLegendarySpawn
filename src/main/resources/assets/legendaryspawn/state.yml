@@ -1,0 +1,12 @@
+# This file is managed by LegendarySpawn. Manual editing is not recommended while the server is running.
+timer:
+  next-attempt-epoch-millis: 0
+  paused: false
+  paused-remaining-millis: 0
+
+# Cooldowns are persisted so restarting the server cannot bypass species/global cooldown rules.
+# species-until is stored as internal "namespace:id|epoch" entries instead of YAML keys so addon IDs
+# containing dots or other valid ResourceLocation characters cannot be mistaken for Config paths.
+cooldowns:
+  global-until-epoch-millis: 0
+  species-until: []

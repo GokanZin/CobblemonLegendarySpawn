@@ -1,0 +1,18 @@
+# Protection for LegendarySpawn Pokemon after they appear.
+# This only tracks Pokemon created by this mod. Normal Cobblemon spawns are not affected.
+
+# When enabled, a newly spawned special Pokemon receives the protection below.
+enabled: true
+
+# How long the protection lasts after the Pokemon originally spawned.
+# 15 means the Pokemon is protected for fifteen minutes, even if an entity-clear system removes it.
+duration-minutes: 15
+
+# Prevents Cobblemon's normal despawner from removing the Pokemon during the protection window.
+# This avoids unnecessary despawn/restore cycles while players are searching for it.
+prevent-natural-despawn: true
+
+# If another mod, command or entity-clear task removes the Pokemon entity during the protection window,
+# LegendarySpawn recreates the same Pokemon at its last known position.
+# The restore check runs once per second and never force-loads an unloaded chunk.
+restore-if-removed: true
